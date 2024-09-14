@@ -14,6 +14,8 @@ public partial class Tako : Area2D
     // 移動量.
     private Vector2 _velocity;
 
+    private PackedScene _explosionScene;
+
     // ④開始処理.
     public override void _Ready()
     {
@@ -25,6 +27,8 @@ public partial class Tako : Area2D
         _velocity.Y = (float)GD.RandRange(-1d, 1d);
 
         GD.Print("_velocity: " + _velocity);
+
+        _explosionScene = GD.Load<PackedScene>("res://src/Explosion.tscn");
     }
 
     // ⑤更新.
@@ -62,6 +66,12 @@ public partial class Tako : Area2D
 
         // タップされたら自身を消す
         if (@event.IsPressed()) {
+            // 爆発エフェクトを生成し描画
+            Explosion explosion = _explosionScene.Instantiate<Explosion>();
+            explosion.Position = Position;
+            GetTree().GetRoot().AddChild(explosion);
+            // GetParent().AddChild(explosion);
+
             QueueFree();
         }
     }
