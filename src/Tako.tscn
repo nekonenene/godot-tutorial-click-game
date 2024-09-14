@@ -17,5 +17,5 @@ texture = ExtResource("1_cka8m")
 position = Vector2(3, -3)
 shape = SubResource("CircleShape2D_000u4")
 
-[connection signal="input_event" from="." to="." method="onTakoInputEvent"]
-[connection signal="mouse_entered" from="." to="." method="onTakoMouseEntered"]
+[connection signal="input_event" from="." to="." method="OnTakoInputEvent"]
+[connection signal="mouse_entered" from="." to="." method="OnTakoMouseEntered"]

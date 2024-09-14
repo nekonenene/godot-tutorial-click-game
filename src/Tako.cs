@@ -58,7 +58,7 @@ public partial class Tako : Area2D
         }
     }
 
-    private void onTakoInputEvent(Node item, InputEvent @event, int shape_idx) {
+    private void OnTakoInputEvent(Node item, InputEvent @event, int shapeIndex) {
         GD.Print("Tako.onTakoInputEvent");
         GD.Print("Event: " + @event);
 
@@ -74,7 +74,7 @@ public partial class Tako : Area2D
         }
     }
 
-    private void onTakoMouseEntered() {
+    private void OnTakoMouseEntered() {
         // GD.Print("Tako.onTakoMouseEntered");
     }
 }
