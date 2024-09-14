@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Tako : Sprite2D
+public partial class Tako : Area2D
 {
     // ②定数の定義.
     // 移動速度.
@@ -54,5 +54,19 @@ public partial class Tako : Sprite2D
             Position = new Vector2(Position.X, _screen.Size.Y);
             _velocity.Y *= -1; // 移動量(Y)を反転
         }
+    }
+
+    private void onTakoInputEvent(Node item, InputEvent @event, int shape_idx) {
+        GD.Print("Tako.onTakoInputEvent");
+        GD.Print("Event: " + @event);
+
+        // タップされたら自身を消す
+        if (@event.IsPressed()) {
+            QueueFree();
+        }
+    }
+
+    private void onTakoMouseEntered() {
+        // GD.Print("Tako.onTakoMouseEntered");
     }
 }
