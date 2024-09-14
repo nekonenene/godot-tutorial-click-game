@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp6qxnqxq65bc"]
+
+[ext_resource type="Texture2D" uid="uid://d233eaodnnjj7" path="res://assets/images/tako.png" id="1_cka8m"]
+[ext_resource type="Script" path="res://src/Tako.cs" id="2_n16e3"]
+
+[node name="Tako" type="Node2D"]
+
+[node name="Tako" type="Sprite2D" parent="."]
+texture = ExtResource("1_cka8m")
+script = ExtResource("2_n16e3")
