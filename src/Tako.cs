@@ -3,26 +3,24 @@ using System;
 
 public partial class Tako : Area2D
 {
-    // ②定数の定義.
-    // 移動速度.
+    // 移動速度
     private const float MOVE_SPEED = 200f;
 
-    // ③クラス変数の定義
-    // 画面サイズ.
+    // 画面サイズ
     private Rect2 _screen;
 
-    // 移動量.
+    // 移動量
     private Vector2 _velocity;
 
     private PackedScene _explosionScene;
 
-    // ④開始処理.
+    // 開始処理
     public override void _Ready()
     {
-        // 画面サイズを取得.
+        // 画面サイズを取得
         _screen = GetViewportRect();
 
-        // 移動速度をランダムで決定.
+        // 移動速度をランダムで決定
         _velocity.X = (float)GD.RandRange(-1d, 1d);
         _velocity.Y = (float)GD.RandRange(-1d, 1d);
 
@@ -31,13 +29,13 @@ public partial class Tako : Area2D
         _explosionScene = GD.Load<PackedScene>("res://src/Explosion.tscn");
     }
 
-    // ⑤更新.
+    // 更新
     public override void _Process(double delta)
     {
-        // 移動処理.
+        // 移動処理
         Position += _velocity * MOVE_SPEED * (float)delta;
 
-        // 画面端での跳ね返り判定.
+        // 画面端での跳ね返り判定
         if (Position.X < 0)
         {
             Position = new Vector2(0, Position.Y);
