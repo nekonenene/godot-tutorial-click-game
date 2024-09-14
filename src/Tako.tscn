@@ -4,17 +4,17 @@
 [ext_resource type="Script" path="res://src/Tako.cs" id="2_n16e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_000u4"]
-radius = 31.0161
+radius = 41.0
 
 [node name="Tako" type="Area2D"]
 script = ExtResource("2_n16e3")
 
 [node name="Tako" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_cka8m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(3, -3)
 shape = SubResource("CircleShape2D_000u4")
 
 [connection signal="input_event" from="." to="." method="onTakoInputEvent"]

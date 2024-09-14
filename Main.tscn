@@ -1,9 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://2fofj03sirps"]
+[gd_scene load_steps=3 format=3 uid="uid://2fofj03sirps"]
 
 [ext_resource type="Texture2D" uid="uid://b5mhxrdi5cctx" path="res://assets/images/bg.png" id="1_fjufo"]
+[ext_resource type="PackedScene" uid="uid://dp6qxnqxq65bc" path="res://src/Tako.tscn" id="2_4dl01"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Bg" type="Sprite2D" parent="."]
 texture = ExtResource("1_fjufo")
 centered = false
+
+[node name="Tako" parent="." instance=ExtResource("2_4dl01")]
+position = Vector2(154, 179)
+
+[node name="Tako2" parent="." instance=ExtResource("2_4dl01")]
+position = Vector2(333, 373)
+
+[node name="Tako3" parent="." instance=ExtResource("2_4dl01")]
+position = Vector2(590, 157)
+
+[node name="Tako4" parent="." instance=ExtResource("2_4dl01")]
+position = Vector2(683, 340)
+
+[node name="Tako5" parent="." instance=ExtResource("2_4dl01")]
+position = Vector2(389, 55)
